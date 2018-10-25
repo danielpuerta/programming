@@ -1,0 +1,421 @@
+What's a database? A database is a collection of related data. By data, we mean know facts that can be recorded and that have implicit meaning. For example: telephone numbers, and addresses of the people you know. 
+
+A database has the following implicit properties: 
+
+	- A database represents some aspect of the real world. 
+
+	- A database is a logically coherent collection of data with some inherent meaning.
+
+	- A database is designed, built, and populated with data for a specific purpose.
+	
+    - A database can be of any size and complexity. A database may be generated and maintained manually or it may be computerized. 
+
+
+What's a database management system? A database management system (DBMS) is a collection of programs that enables user to create and maintain a database. The Database Management System (DBMS) is a general-purpose software system that facilitates the processes of defining, constructing, manipulating and sharing databases among various users and applications. Defining a database involves specifying the data types, structures, and constraints of the data to be stored in the database. The database definition or descriptive information is also stored by the DBMS in the form of a database catalog or dictionary; it is called meta-data. Constructing the database is the process of storing the data on some storage medium that is controlled by the DBMS. Manipuling a database includes functions such as querying the database to retrieve specific data, updating the database to reflect changes, and generating reports from the data. Sharing a database allows multiple users and programs to access the database simultaneously.
+
+An application program accesses the database by sending queries or request for data to the DBMS. A query typically causes some data to be retrieved; a transaction may cause some data to be read and some data to be written into the database.
+
+
+Actors on the Scene
+
+
+In large organizations, many people are involve in the design, use, and maintenance of a large database with hundreds of users. Following we identify the people whose jobs involve the day-to-day use of a large database:
+	
+	- Database Administrators. In any organization where many people use the same resources, there is a need for a chief administrator to oversee and manage these resources. In  a database enviroments, the primary resource is the database itself, and the secondary resource is the DBMS and related software. The database administrators is responsible for authorizing access to the database, coordinating and monitoring its use, and acquiring software and hardware resources as needed.
+
+	- Database Designers. Database Designers are responsible for identifying the data to be stored in the database and for choosing appropriate structures to represent and store this data. Database designers typically interact with each potential group of users and develop views of the database that meet the data and processing requirements of these groups.
+
+	-End users. End users are the people whose jobs require access to the database for querying, updating, and generating reports; the database primarily exists for their use. There are several categories of end users:
+
+		- Casual end users: occasionally access the database, but they may need different information each time. 
+
+		- Naive or parametric end users: make up a sizable portion of database end users. 
+
+		- Sophisticated end users: include engineers, scientists, business analysts, and other who thoroughly familiarized themselves with the facilities of the DBMS in order to implement their own applications to meet their complex requirements.
+
+
+History of Database Managements System 
+
+	
+Los origenes de las bases de datos se remontan a la Antiguedad, donde ya existian bibliotecas y toda clase de registros. El uso de las bases de datos se desarroll� a partir de las necesidades de almacenar grandes cantidades de informacion o datos.
+
+En 1884 Herman Hollerith cre� la m�quina autom�tica de tarjetas perforadas, siendo nombrado as� el primer ingeniero estad�stico de la historia. En esta �poca, los censos se realizaban de forma manual. Ante esta situacion, Hollerith comenz� a trabajar en el dise�o de una maquina tabuladora o censadora, la cual estaba basada en tarjetas perforadas.
+
+Posteriormente, en la d�cada de los cincuenta se da origen a las cintas magn�ticas, para automatizar la informacion y hacer respaldos.
+
+En la decada de los sesenta, las computadoras bajaron los precios para que las compa�ias privadas las pudiesen adquirir; dando paso a que se popularizada el uso de los discos, cosa que fue un adelanto muy efectivo en la �poca, debido a que a partir de este soporte se podia consultar la informacion directamente, sin tener que saber la ubicacion exacta de los datos.
+
+En esta misma �poca se dio inicio a las primeras generaciones de bases de red y las bases de datos jer�rquicas, ya que era posible guardar estructuras de datos en listas y arboles.
+	
+Se cree que el origen de los sistemas de bases de datos vinieron cuando inicio el proyecto Apolo, y dado que no habia un sistema de bases de datos para manejar o gestionar tanta informacion como la que requeria dicho proyecto. La primera empresa encargada del proyecto, NAA (North American Aviation), desarroll� una aplicacion, la cual llamaron GUAM, que estaba basada en el concepto que varias piezas peque�as juntas, forman una mas grande. Este tipo de estructura es lo que se denomina como una estructura jer�rquica.
+Luego, IBM se une a NAA para desarrollar GUAM, la cual luego ser�a IMS (Information Management System).Y posteriormente, se llevo a cabo el desarrollo del IDS (Integreated Data Store) desarrollado por Charles Bachman, IDS era un nuevo tipo de sistema de bases de datos, conocido como el sistema de red. El sistema de red se desarroll�, en parte, para satisfacer la necesidad de representar relaciones entre datos m�s complejos que las que se pod�an modelar con los sistemas jer�rquicos, y, en parte para imponer un est�ndar de bases de datos. Para ayudar a establecer dicho est�ndar, el grupo CODASYL (Conference on Data Systems Languages), formado por los representantes del gobieron de EEUU y representates del mundo empresarial, formaron un grupo denomiado DBTG (Data Base Task Group), cuyo objetivo era definir especificaciones est�ndar que permitieran la creacion de bases de datos y el manejo de datos. Los sistemas jer�rquico y de red constituyen la primera generaci�n de los SGBD. Estos sistemas presentan algunos inconvenientes:
+
+	- Es necesario escribir complejos programas de aplicaci�n para responder a cualquier tipo de consulta de datos, por simple que esta sea.
+
+	- La independencia de datos es m�nima.
+
+	- No tienen un fundamento te�rico. 
+	
+Por lo que respecta a la d�cada de los setenta, Edgar Frank Codd, cient�fico inform�tico ingles de los laboratorios de investigaciones de IBM, escribi� un art�culo presentado el modelo relacional. En este articulo presentaba tambi�n los inconvenientes de los sistemas previos. A la par public� una seria de reglas para los sistemas de datos relaciones a trav�s de su art�culo "Un modelo relacional de datos para grandes bancos de datos compartidos". Los primeros sistemas relaciones fueron System R, de IBM, que se desarroll� para probar la funcionalidad del modelo relacional. Estos acontecimientos trajeron dos grandes desarollos:
+
+	- En 1980 se desarrolla SQL (Structured Query Language) o lo que es lo mismo un lenguaje de consultas o lenguaje declarativo de acceso a bases de datos relaciones.
+
+	- La produccion de varios SGBD relacionales, como DB2, SLQ/DS Y Oracle.
+
+Hoy en d�a, existen cientos de SGBD relacionales, tanto para microordenadores como para sistemas multiusuario, aunque muchos no son completamente fieles al modelo relacional.  Los SGBD relacionales constituyen la segunda generaci�n de los SGBD. Sin embargo, el modelo relacional tambi�n tiene sus debilidades, siendo una de ellas su limitada capacidad al modelar los
+datos. Se ha hecho mucha investigaci�n desde entonces tratando de resolver este problema. En 1976, Peter Chen present� el modelo entidad-relaci�n, que es la t�cnica m�s utilizada en el dise�o de bases de datos. En 1979, Codd intent� subsanar algunas de las deficiencias de su modelo relacional con una versi�n extendida denominada RM/T (1979) y m�s recientemente RM/V2 (1990). Los intentos de proporcionar un modelo de datos que represente al mundo real de un modo m�s fiel han dado lugar a los modelos de datos sem�nticos.
+
+La evoluci�n reciente de la tecnolog�a de bases de datos viene marcada por el afianzamiento de las bases de datos orientadas a objetos, la extensi�n de las bases de datos relacionales y el procesamiento distribuido. Esta evoluci�n representa la tercera generaci�n de los SGBD. 
+
+Por su parte, los sistemas de gesti�n de bases de datos relacionales han ido evolucionando estos �ltimos a�os para soportar objetos y reglas, y para ampliar el lenguaje SQL y hacerlo m�s extensible y computacionalmente completo, dando lugar a lo que se conocen como sistemas objeto-relacionales.
+
+En la d�cada de 1990 la investigaci�n en bases de datos gir� en torno a las bases de datos orientadas a objetos. Las cuales han tenido bastante �xito a la hora de gestionar datos complejos en los campos donde las bases de datos relacionales no han podido desarrollarse de forma eficiente. As� se desarrollaron herramientas como Excel y Access del paquete de Microsoft Office que marcan el inicio de las bases de datos orientadas a objetos.
+
+
+Advantages of using the DBMS approach
+
+	- Controlling Redundancy
+
+	- Restricting Unauthorized Access 
+
+	- Providing Persistent Storage for Program Objects
+
+	- Providing Storage Structures and Search Techniques for Efficient Query Processing
+
+	- Providing Backup and Recovery
+
+	- Providing Multiple User Interfaces
+
+	- Representing Complex Relationships among Data
+
+	- Enforcing Integrity Constraints
+
+	- Permitting Inferencing and Actions Using Rules
+
+
+Ventajas por la integracion de datos
+
+
+	- Control sobre la redundancia de datos. Los sistemas de ficheros almacenan varias copias de los
+	  mismos datos en ficheros distintos. Esto hace que se desperdicie espacio de almacenamiento,
+	  adem�s de provocar la falta de consistencia de datos (copias que no coinciden). En los sistemas
+	  de bases de datos todos estos ficheros est�n integrados, por lo que no se almacenan varias copias
+	  de los mismos datos. Sin embargo, en una base de datos no se puede eliminar la redundancia
+ 	  completamente, ya que en ocasiones es necesaria para modelar las relaciones entre los datos,
+	  o bien es necesaria para mejorar las prestaciones.
+
+	- Consistencia de datos.  Eliminando o controlando las redundancias de datos se reduce en gran
+	  medida el riesgo de que haya inconsistencias. Si un dato est� almacenado una sola vez, cualquier
+	  actualizaci�n se debe realizar s�lo una vez, y est� disponible para todos los usuarios
+	  inmediatamente. Si un dato est� duplicado y el sistema conoce esta redundancia, el propio
+	  sistema puede encargarse de garantizar que todas las copias se mantienen consistentes. 
+
+	- Comparticion de datos. En los sistemas de ficheros, los ficheros pertenecen a las personas o a
+	  los departamentos que los utilizan. Pero en los sistemas de bases de datos, la base de datos
+	  pertenece a la empresa y puede ser compartida por todos los usuarios que est�n autorizados.
+      Adem�s, las nuevas aplicaciones que se vayan creando pueden utilizar los datos de la base de
+	  datos existente.
+
+
+Ventajas por la existencia de DBMS
+
+
+	- Mejora en la integridad de los datos. La integridad de la base de datos se refiere a la validez de
+	  los datos almacenados. Normalmente, la integridad se expresa mediante restricciones o reglas
+	  que no se pueden violar. Estas restricciones se pueden aplicar tanto a los datos, como a sus
+	  relaciones, y es el SGBD quien se debe encargar de mantenerlas.
+
+	- Restricting Unauthorized Access. When multiple users share a large database, it is likely that most users will not be authorized  to acces all information in the database. For example, financial data is often considered confidential, and only authorized personrs are allowed to acces such data.Ub addition, some users may only be permitted to retrieve data, whereas others are allowed to retrieve and update.
+
+	- Mejora en la accesibilidad de los datos. Muchos SGBD proporcionan lenguajes de consultas o
+	  generadores de informes que permiten al usuario hacer cualquier tipo de consulta sobre los
+	  datos, sin que sea necesario que un programador escriba una aplicaci�n que realice tal tarea.
+
+ 	- Mejora en la productividad. El SGBD proporciona muchas de las funciones est�ndar que el
+	  programador necesita escribir en un sistema de ficheros. A nivel b�sico, el SGBD proporciona
+	  todas las rutinas de manejo de ficheros t�picas de los programas de aplicaci�n. El hecho de
+	  disponer de estas funciones permite al programador centrarse mejor en la funci�n espec�fica
+	  requerida por los usuarios, sin tener que preocuparse de los detalles de implementaci�n de bajo
+	  nivel.
+
+	- Mejora en el mantenimiento gracias a la independencia de datos. En los sistemas de ficheros,
+	  las descripciones de los datos se encuentran inmersas en los programas de aplicaci�n que
+	  los manejan. Esto hace que los programas sean dependientes de los datos, de modo que un
+	  cambio en su estructura, o un cambio en el modo en que se almacena en disco, requiere cambios
+	  importantes en los programas cuyos datos se ven afectados. Sin embargo, los SGBD separan
+	  las descripciones de los datos de las aplicaciones. Esto es lo que se conoce como independencia
+	  de datos, gracias a la cual se simplifica el mantenimiento de las aplicaciones que acceden a la
+	  base de datos.
+
+	- Aumento de la concurrencia. En algunos sistemas de ficheros, si hay varios usuarios que pueden
+	  acceder simult�neamente a un mismo fichero, es posible que el acceso interfiera entre ellos de
+	  modo que se pierda informaci�n o, incluso, que se pierda la integridad. La mayor�a de los SGBD
+	  gestionan el acceso concurrente a la base de datos y garantizan que no ocurran problemas de
+	  este tipo.
+
+	- Providing Backup and Recovery. A DBMS must provide facilities for recovering from hardware or software failures. The backup and recovery subsystem of the DBMS is responsible for recovery. For example, if the computer system fails in the middle of a complex update transaction, the recovery subsystem is responsible for making sure that the database is restored to the state it was in before the transaction started executing. Alternatively, the recovery subsystem could ensure that the transaction is resumed from the point at which it was interrupted so that its full effect is recorded in the database. Disk backup is also necessary in case of catastrophic disk failure.
+
+
+Desventajas de los DBMS
+
+
+	 - Complejidad. Los SGBD son conjuntos de programas muy complejos con una gran funcionalidad.
+	   Es preciso comprender muy bien esta funcionalidad para poder sacar un buen partido
+	   de ellos.
+
+	 - Tama�o. Los SGBD son programas complejos y muy extensos que requieren una gran cantidad
+	   de espacio en disco y de memoria para trabajar de forma eficiente.
+
+	 - Coste econ�mico del SGBD. El coste de un SGBD var�a dependiendo del entorno y de la
+	   funcionalidad que ofrece. Adem�s, hay que pagar una cuota anual de mantenimiento que suele ser un porcentaje del precio del SGBD. Sin embargo, en los �ltimos a�os han surgido SGBD libres (open source).
+
+	 - Coste del equipamiento adicional. Tanto el SGBD, como la propia base de datos, pueden
+	   hacer que sea necesario adquirir m�s espacio de almacenamiento. Adem�s, para alcanzar las
+	   prestaciones deseadas, es posible que sea necesario adquirir una m�quina m�s grande o una
+	   m�quina que se dedique solamente al SGBD. Todo esto har� que la implantaci�n de un sistema
+	   de bases de datos sea m�s cara.
+
+	 - Coste de la conversi�n. En algunas ocasiones, el coste del SGBD y el coste del equipo inform�tico
+	   que sea necesario adquirir para su buen funcionamiento, es insignificante comparado
+	   al coste de convertir la aplicaci�n actual en un sistema de bases de datos. Este coste incluye el coste de ense�ar a     la  plantilla a utilizar estos sistemas y, probablemente, el coste del personal
+	   especializado para ayudar a realizar la conversi�n y poner en marcha el sistema. Este coste
+	   es una de las razones principales por las que algunas empresas y organizaciones se resisten a
+	   cambiar su sistema actual de ficheros por un sistema de bases de datos.
+
+	 - Prestaciones. Un sistema de ficheros est� escrito para una aplicaci�n espec�fica, por lo que
+	   sus prestaciones suelen ser muy buenas. Sin embargo, los SGBD est�n escritos para ser m�s
+	   generales y ser �tiles en muchas aplicaciones, lo que puede hacer que algunas de ellas no sean
+	   tan r�pidas como antes.
+
+	 - Vulnerable a los fallos. El hecho de que todo est� centralizado en el SGBD hace que el sistema
+	   sea m�s vulnerable ante los fallos que puedan producirse.
+
+
+
+Database System and Architecture
+
+
+The architecture of DBMS packages has evolved from the early monolithic systems, where the whole DBMS software package was one tightly integrated system, to the modern DBMS packages that are modular in design, with a client/server system architecture. 
+
+In a basic client/server DBMS architecture, the system funcionality is distributed between two types of modules. A client module is typically designed so that it will run on a user workstation or personal computer. Typically, application programs and user interfaces that access the database run in the client module. Hence, the client module handles user interaction and provides the user-friendly interfaces such as forms-or menu-based GUIs. The other kind of module, called a server module, typically handles data storage, access, search and other functions. 
+
+One fundamental characteristic of the database approach is that provides some level of data abstraction. Data abstraction generally refers to  the suppression of details of data organization and storage, and the highlighting of the essential features for an improved understanding of data. One of the characteristics of the database approach is to support data abstraction so that different users can perceive data at their preferred level of detail. A data model is a collection of concepts that can be used to describe the structure of a database, provides the  necessary means to achieve this abstraction. By structure of database we mean the data types, relationships, and constraints that apply to the data.
+
+Many data models have been proposed, which we can categorize according to the types of concepts they use to describe the database structure. High-level or conceptual data model provide concepts that are close to the way many users perceive data, whereas low-level or physical data models provide concepts that describe the details of how data is stored on the computer storage media, typically on magnetic disks. Concepts provided by low-level data models are generally meant for computer specialists, not for end users.
+
+Los modelos de datos de high-level, o modelos conceptuales, dispone de conceptos muy cercanos a como la mayoria de usuarios percibe los datos, mientras que los modelos de datos de bajo nivel, o modelos fisicos, proporcionan conceptos que describen los detalles de como se almancenan los datos en el ordenador. Entre estos dos extremos se encuentran los <modelos logicos>, whole concepts can be understanded for the end users, aunque no esta demasiado alejados de la forma en que los datos se organizan fisicamente.
+
+Conceptual data models use concepts such as entities, attributes, and relationships. An entity represents a real-world object, such as an employee or a project. An attribute represents some property of interest that further describes an entity, such as the employee's name or salary. A relationships among two or more entities represents an association among the entities, for example, a works-on relationships between and employee and a project.
+
+Physical data models describe how data is stored as files in the computer by representing information such as record formats, record orderings, and access paths. An access path is a structure that makes the search for particular database records efficient.
+
+
+Schemas
+
+
+In any data model, it is important to distinguish between the description of the database and the database itself. 
+The description of a database is called the database schema, which is specified during database design and is not expected to change frequently. Most data models have certain conventions for displaying schemas as diagrams. A displayed schema is called a scheme diagram. 
+
+A scheme diagram displays only some aspects of a schema, such as the names of record types and data items, and some types of constraints.
+
+The actual data in a database may change quite frequently. The data in the database at a particular moment in time is called a database state or snapshot. It is also called current set of occurrences or instances in the database. In a given database state, each schema construct has its own current set of instances.
+
+The distinction between database schema and database state is very important. When we define a new database, we specify its database schema only to the DBMS. At this point, the corresponding database state is the empty state with no data. We get the initial state of the database when the database is first populated or loaded with the initial data. From then on, every time an update operation is applied to the database, we get another database state. At any point in the time, the database has a current state. The DBMS is partly responsible for ensuring that every state of the database is a valid state. That is, a state that satisfies the structure and constraints specified in the schema. Hence, specifying a current schema to the DBMS is extremely important and the schema must be designed with utmost care. The DBMS stores the descriptions of the scheme constructs and constraints, also called the meta-data.
+
+
+The Three-Schema Architecture
+
+
+The goal of the three-schema architecture, is to separate the user applications from the physical database. In this architecture,  schema can be defined at the following three levels:
+
+    - The internal level has an internal schema, which describes physical storage structure of the database. The internal schema uses a physical data model and describes the complete details of data storage and access paths for the database.
+
+    - The conceptual level has a conceptual schema, which describes the structure of the whole database for a community of users. The conceptual schema hides the details of physical storage structures and concentrates on describing entities, data types, relationships, user operations, and constraints. Usually, a representational data model is used to describe the conceptual schema when a database system is implemented. This implementation conceptual schema is often based on a conceptual schema design in a high-level
+data model.
+
+    - The external or view level includes a number of external schemas or user views. Each external schema describes the part of the database that a particular user group is interested in and hides the rest of the database from that user group.
+
+
+Data Independence
+
+
+The three-scheme architecture can be used to further explain the concept of data independence, which can be defined as the capacity to change the schema at one level of a database system without having to change the scheme at the next higher level. There are two typos of data independence:
+
+        1. Logical data independence: is the capacity to change the conceptual scheme without having to change external schemas or application programs. We may change the conceptual scheme to expand the database (by adding a record type or data item), to change constraints, or to reduce the database. 
+
+        2. Physical data independence: is the capacity to change the internal schema without having to change the conceptual scheme. Hence, the external schemas need not be change as well. Changes the internal schema may be needed because some physical files were reorganized, for example, by creating additional access structures, to improve the performance of retrieval or update. If the same data as before remains in the database, we should not have to change the conceptual schema.
+
+
+Database Languages and Interfaces
+
+
+Once the design of a database is completed and a DBMS is chose to implement the database, the first step is to specify conceptual and internal schemas for the database and anu mappings between the two. In many DBMSs where no strict separation of levels is maintained, one language, called the data definition language (DDL), is used by the DBA and by database designers to define both schemas. The DBMS will have a DDL compiler whose function is to process DDL statements in order to indentify descriptions of the schema constructs and to store the schema description in the DBMS catalog.
+
+In DBMSs where a clear separation is maintained between the conceptual and internal levels, the DDL is used to specify the conceptual schema only. Another language, the storage definition language (SDL), is used to specify the internal schema. The mappings between the two schemas may be specified in either one of these languages. In most RDBMSs today, there is no specific language that performs the role of SDL. Instead, the internal schema is specified by a combination of functions, parameters, and specifications related to storage. These permit the DBA staff to control indexing choices and mapping of data storage. For a true three-schema architecture, we would need a third language, the view definition language (VDL), to specify user views and their mappings to the conceptual schemas. In relational DBMSs, SQL is used in the role of VDL to define user or application views as results of predefined queries.
+
+Once the database schemas are compiled and the database is populated with data, users must have some means to manipulate the database. Typical manipulations include retrieval, insertion, deletion, and modification of the databa. The DBMS provides a set of operations or a language called the data manipulation language (DML) for these purposes.
+
+In current DBMSs, the preceding types of languages are usually not considered distinct languages; rather, a comprehensive integrated language is used that includes constructs for conceptual schema defintion, view definition, and data manipulation. Storage definition is typically kept separate, since it is used for defining physical storage structures to fine-tune the performance of the database system, which is usually done by the DBA staff.
+
+There are two main types of DMLs. A high-level or nonprocedural DML can be used on its own to specify complex database operations concisely. Many DBMSs allow high-level DML statements either to be entered interactively from a display monitor or terminal or to be embedded in a general-purpose programming language. In the latter case, DML statements must be identified within the program so that ther can be extracted by a precompiler abd processed by the DBMS, A low-level or procedural DML must be embedded in a general-purpose programming language. This type of DML typically retrieves individual records or objects from the database and processed each separately.
+
+
+Relational Model Concepts
+
+
+The first commercial implementations of the relational model became available in the early 1980s, such as the SQL/DS system on the MVS operating system by IBM and the Oracle DBMS. Since then, the model has been implemented in a large number of commercial systems.  Current popular relational DBMSs (RDBMSs) include BD2 and Informix Dynamic Server (from IBM), Oracle and Rdb (from Oracle),  Sybase DBMS (from Sybase) and SQLserver and Access (from Microsft). In addition, several open source systems, such as MySQL, and PostgreSQL, are available.
+
+Data models that preceded the relational model include the hierarchical and network models. They were proposed in the 1960s.
+
+El modelo relacional se basa en el concepto matematico de relacion, que graficamente se representa mediante una table. Codd, que era un experto matematico, utilizo una terminologia perteneciente a las matematicas, la teoria de conjunto y logica de predicados.
+
+The relational model represents the database as a collection of relations. Informally, each relational resembles a table of values or, to some extent, a flat structure. 
+
+When a relation is thought of as a table of values, each row in the table represents a collection of related data values. A row represents a fact typically corresponds to a real-world entity or relationship. The table name and column names are used to help to interpret the meaning of the values in each row.
+
+In the formal relational model terminology, a row is called a tuple, a column header is called an attribute, and the table is called a relation. The data type describing the types of values that can appear in each column is represented by a domain of possible values.
+
+What's domain? A domain D is a set of atomic values. By atomic we mean that each value in the domain is indivisible as far as the formal relational model is concerned. The domain is the valid values set of one or more attributes. A common method of specifying a domain is to specify a data type from which the data values forming the domain are drawn. It is also useful specify a name for the domain, to help in interpreting its values. 
+
+A relational schema R, denoted by R(A1,A2,...,An), is made up of a relation name R and a list of attributes, A1, A2, ..., An. Each attribute Ai is the name of a role played by some domain D in the relational schema R. D is called the domain of Ai and is denoted by dom(Ai). A relational schema is used to describe a relation; R is called the name of this relation. The degree (or arity) of a relation is the number of attributes n of its relation schema.
+
+A relation of degree seven, which stores information about university students, would contain seven attributes describing each student, as follows:
+
+	                        STUDENT(name,ssn,home_phone,address,office_phone,age,gpa)
+
+Using the data type of each attribute, the definition is sometimes written as:
+	    STUDENT(name:string,ssn:string,home_phone:string,address:string,office_phone:string,age:integer,gpa:real)
+
+A relation R defined on a set of domains D1,D2,...Dn, consta de: 
+        
+        - A header: conjunto fijo de pares atributo:dominio {(A1:D1),(A2:D2),...,(An,Dn)}. The R degree is n.
+
+        - Body: set variable of tuples. Each tuple is a set of pairs attribute:value: {(A1,v1),(A2,v2,...,(An,vn))}
+
+     
+Characteristics of Relations:
+
+
+        - El nombre de las relaciones y de los atributos deben ser unicos. 
+
+        - Ordering of Tuples in a Relation: A relation is defined as a set of tuples. Mathematically, elements of a set have no order among them; hence, tuples in a relation do not have any particular order. In other words, a relation s not sensitive to the ordering of tuples.
+
+        - Values and NULLs in the Tuples. Each value in a tuple is an atomic value; that is, it is not divisible into components. An important concept is that of NULL values, which are used to represent the values of attrbute that may be unknown or may not apply to a tuple. A special value, called NULL, is used in these cases. In general, we can have several meanings for NULL values, such as value unknown, value exists but is not available, or attribute does not apply to this tuple.
+
+        - Interpretation of a Relation. The relation schema can be interpreted as a declaration or a type of assertion. For the example, the schema of the STUDENT relation asserts that, in general, a student entity has a name, ssn, home_phone,address,office_phone,age_gpa. Each tuple in the relation can then be interpreted as a fact or a particular instance of the assertion. 
+
+
+Keys
+
+
+Key plays an important role in relational database; it is used for identifying unique rows from table. It also establishes relationship among tables. Types of keys in DBMS:
+
+
+	- Super Key: is a attribute or set of attributes in a table that uniquely identifies a the tuples in that table. A Super Key specifies a uniqueness constraint that no two distinct tuples in any state r of R can have the same value for the Super Key. Every relation has at least one default superkey, the set of all its attributes.
+
+
+	- Key: a Key K of a relation schema R is a superkey of R with the addional property that removing any attribute A from K leaves a set of attributes K' that is not a superkey of R any more, a key satisfies two properties: 
+	
+		1. (Unicidad) Two distinct tuples in any state of the relation cannot have identical values for (all) attributes in the key. This first property also appllies to a superkey.
+
+		2. (Irreducibilidad) It is a minimal superkey, a superkey from which we cannot remove any attributes and still hace the uniqueness constraint in condition 1 hold.
+
+Hence, a key is a superkey, but not viceversa.
+
+
+	- Candidate Key: in general, a relation schema may have more than one key. In this case, each of the keys is called a candidate key
+
+	- Primary, key: it is common to designate one of the candidate keys as the primary key of the relation. This is the candidate key whose values are used to identify tuples in the relation. The other candidate keys are designated as Unique Keys o Alternatives Keys, and are not underlined.
+
+
+	- Una clave ajena (Foreign Key) es un atributo o conjunto de atributos en una relacion cuyos valores coinciden con los valores de la clave primaria de alguna otra relacion. 
+
+
+Relational Databases and Relational Database Schemas
+
+
+A relational database schema (Solo aparece nombre de la relacion, y sus atributos. Las claves primarias aparecen sombreadas) S is a set of relation schemas S = {R1,R2,...,RM} and a set of integrity constraints IC. A relational database state (es cuando aparece la base de datos con sus valores propiamentes colocados en la tabla) DB of S is a set of relation states DB = {r1,r2,...,rm} such that each ri is a state of Ri and such that the ri relation state satisfy the integrity constraints specified in IC. 
+
+When we refer to a relational database, we implicitly include both its schema and its current state. A database state doesn't obey all the integrity constraints is called an invalid state, and a state that satisfies all the constratinsin the defined set of integrity constraints IC is called a valid state.
+
+Each relational DBMS must have a data definition language (DDL) for defining a relational database schema. Current relational DBMSs are mostly using SQL for this purpose.
+
+
+Integrity, Referential Integrity and Foreign Keys
+
+
+The entity integrity constraint states (ninguno de los atributes que componen la clave primaria puede ser nulo) that no primary keys value can be NULL. This is because the primary key value is used to identify indiviual tuples in a relation. Having NULL values for the primary key implies that we cannot identify some tuples. For example, if two or more tuples had NULL for their primary keys, we may not be able to distinguish them if we try to reference them from other relations. 
+
+Key constraints and entity constraints are specified on individual relations. 
+
+The referential integrity constraint is specified between two relations and is used to maintain the consistency among tuples in two relations. Informally, the referential integrity constraint states that a tuple in one relation that refers to another relation must refer to an existing tuple in that relation.
+
+To define referential integrity more formally, first we define the concept of a foreign key. The conditions for a foreign key, given below, specify a referential integrity constraint between two relation schemas R1 and R2. A set of attributes FK in relation schema R1 is a foreign key of R1 that references relation R2 if it satisfies the following rules:
+
+		1. The attributes in Fk have the same domain(s) as the primary key attributes PF of R2; the attributes FK are said to reference or refer to the relation R2.
+
+        2. A value of FK in a tuple t1 of the current state r1(R1) either occurs as a value of PK for some tuples t2 in the current state r2(R2) or is NULL. In the former case, we have t1[FK] = t2[PK], and we say that the tuple t1 references or refers to the tuple t2.
+
+In this definition, R1 is called the referencing relation and R2 is the referenced relation. If these two conditions hold, a referential integrity constraint from R1 to R2 is said to hold. In a database of many relation, there are usually many referential integrity constraints.
+
+
+Data modeling using the Entity-Relationship (ER) Model
+
+
+Generally, the term database application refers to a particular database and the associated programs that implement the database queries and updates.
+
+The first step is requirements collection and analysis. During this step, the database designers interview prospective database users to understand and document their data requirements. The result of this step is a concisely written set of users' requirements. 
+
+Once the requirements have been collected and analyzed, the next step is to create a conceptual schema for the db, using a high-level conceptual data model. This step is called conceptual design. The conceptual schema is a concise description of the data requirements of the users and includes detailed descriptions of the entity types, relationships, and constraints; these are expressed using the concepts provide by the high-level data model. Because these concepts do not include implementation details, they are usually easier to understand and can be used to communicate with nontechincal users.
+
+The next step in database design is the actual implementation of the database, using a commercial DBMS. So the conceptual schema is transformed from the high-level data model into the implementation data model. This step is called logical design or data model mapping; its result is a database schema in the implementation data model of the DBMS.
+
+The last step is the physical design phase, during which the internal storage structures, file organizations, indexed, access paths, and physical design parameters fro the database files are specified.
+
+The ER model describes data as entities, relationships, and attributes.
+
+The basic object that the ER model represents is an entity, which is a -thing- in the real world with an independent existence (for example, a particular person, car or a house) or it may be an object with a conceptual existence (for instance, a company, a job). Each entity has attributes, the particular properties that describe it.
+
+Several types of attributes occur in the ER model: simple vs composite, single-value vs multivalued, and stored vs derived.
+
+Composite attributes can be divided into smaller subparts, which represent more basic attributes with independent meanings. Attributes that are not divisible are called simple or atomic attributes. Composite attribtues can form a hierarchy. The value of a composite attribute is the concatenation of the values of its component simple attributes.
+
+Most attributes have a single value for a particular entity, such attributes are called single-value. In some cases an attribute can have a set of values for the same entity, for instance, a College_degrees attribute for a person, one person may not have a college degree, another person may have one, and a third person may have two or more degrees; different people can have different number of values for the College_degrees attribute. Such attributes are called multivalued.
+
+In some cases, two (or more) attribtue values are related, for example, the Age and Birth_date attribute of a person. For a particular person entity, the value of Age can be determined from the current (today's) data and the value of that person's Birth_date. The Age attribute is hance called a derived attribute and is said to be derivable from the Birth_date attribute, which is called a stored attribtue.
+
+
+Entity type and entity set
+
+
+A db usually contains groups of entities that are similar. An entity type defines a collection (or set) of entities that the same attributes. Each entity type in the db is describes by its name and attributes. The collection of all entities of a particular entity type in the db at any point is called an entity set; the entity set is usually referred to using the same name as the entity type.
+
+An important constraint on the entities of an entity type is the key or uniqueness constraint on attributes. An entity type usually has one or more attributes whose values are distinct for each individual entity in the entity set. Such an attribute is called a key attribute, and its values can be used to indentify each entity uniquely.
+
+
+Degree of a Relationship Type
+
+
+The degree of a relationship type is the number of participating entity types. A relationship type of degree two is called binary, and one of degree three is called ternary. RElationships can generally be of any degree
+
+Relationship types usually have certain constraints that limit the possible combinations of entities that may participate in the corresponding relationship set. We can distinguish two main types of binary relationship constraints: cardinality and participation. 
+
+The cardinality ratio for a binary relationship specifies the maximun number of relationship instances that an entity can participate in. The possible cardinality ratios for binary relationship types are 1:1, 1:N, N:1 and M:N.
+
+The participation constraint specifies whether the existence of an entity depends on its being related to another entity via the relationship type. This constraint specifies the minimun number of relationship instances that each entity can participate in, and is sometimes called the minimun cardinality constraint. There are two types of participation constraints, total and partial.
+
+SQL
+
+
+SQL is the language for generating, manipulating, and retrieving data from a relational database. One of the reasons for the popularity of relational databases is that properly designed relational databases can handle huge amounts of data.
+
+
+What Is SQL?
+
+
+Along with Codd’s definition of the relational model, he proposed a language called DSL/Alpha for manipulating the data in relational tables. Shortly after Codd’s paper was released, IBM commissioned a group to build a prototype based on Codd’s ideas.
+This group created a simplified version of DSL/Alpha that they called SQUARE. Re-finements to SQUARE led to a language called SEQUEL, which was, finally, renamed SQL.
+
+SQL is now entering middle age (as is this author, alas), and it has undergone a great deal of change along the way. In the mid-1980s, the American National Standards Institute (ANSI) began working on the first standard for the SQL language, which was published in 1986. Subsequent refinements led to new releases of the SQL standard in 1989, 1992, 1999, 2003, and 2006. Along with refinements to the core language, new features have been added to the SQL language to incorporate object-oriented functionality, among other things. The latest standard, SQL:2006, focuses on the integration of SQL and XML and defines a language called XQuery which is used to query
+data in XML documents. SQL goes hand in hand with the relational model because the result of an SQL query is a table (also called, in this context, a result set). Thus, a new permanent table can be created in a relational database simply by storing the result set of a query.
+
