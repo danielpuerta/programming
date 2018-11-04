@@ -353,3 +353,59 @@ If you have a lot of tags that you want to push up at one, you can also use the 
 
 			$ git push origin --tags
 
+
+
+Git branching
+
+
+If you want to create a new branch, you can run: 
+	
+			$ git branch testing
+
+That command only created a new branch, it didn't switch to that branch
+
+If you want to see all the branches, you can run:
+
+			$ git branch
+
+To switch to an existing branch, you run:
+
+			$ git checkout <branch>
+
+This moves HEAD to point to the <branch> branch
+
+You can also see the history of your commits, showing where your branch pointers are and how your history has diverged, with the command:
+
+			$ git log --oneline --decorate --graph --all
+
+If you run:
+
+			$ git checkout -b <new_branch>
+
+that last command creates a new branch and to swicth to it
+
+
+If you run: 
+			$ git merge <branch>
+
+you will be merging <branch> with the branch you currently on
+
+Occasionally, this process doesn't go smoothly. If you changed the same part of the same file differently in the two branch you're merging together, Git won't be able to merge them cleanly.
+
+
+The command $ git branch -v shows the last commit on each branch
+
+
+The useful --merged and --no-merged options can filter this list to branches that you have or have not yet merged into the brach you're currently on. To see which branch are already merged into the branch you're on, you can run git branch --merged. To see all the branches that contain work you haven't yet merged in, you can run git branch --no-merged
+
+Because Git uses a simple three-way merge, merging from one branch into another multiple times over a long period is generally easy to do. This means you can have several branches that are
+always open and that you use for different stages of your development cycle; you can merge
+regularly from some of them into others.
+
+
+Many Git developers have a workflow that embraces this approach, such as having only code that is entirely stable in their master branch?—?possibly only code that has been or will be released. They have another parallel branch named develop or next that they work from or use to test stability?—?it isn’t necessarily always stable, but whenever it gets to a stable state, it can be merged into master. It’s used to pull in topic branches (short-lived branches, like your earlier iss53 branch) when they’re ready, to make sure they pass all the tests and don’t introduce bugs.
+
+
+What's a topic branch? is a short-lived branch that you create and use for a single particular feature or related work.
+
+
