@@ -1,4 +1,4 @@
-What's a database? A database is a collection of related data. By data, we mean know facts that can be recorded and that have implicit meaning. For example: telephone numbers, and addresses of the people you know. 
+﻿What's a database? A database is a collection of related data. By data, we mean know facts that can be recorded and that have implicit meaning. For example: telephone numbers, and addresses of the people you know. 
 
 A database has the following implicit properties: 
 
@@ -548,4 +548,4 @@ The UPDATE command is used to modify attribute values of one or more selected tu
 
 			UPDATE PROJECT SET Plocation='TX', Dnum=5 WHERE Pnumber=10;
 
-It is also possible to specify NULL or DEFAULT as the new attribute values.
+It is also possible to specify NULL or DEFAULT as the new attribute values
