@@ -1,4 +1,4 @@
-What's a database? A database is a collection of related data. By data, we mean know facts that can be recorded and that have implicit meaning. For example: telephone numbers, and addresses of the people you know. 
+﻿What's a database? A database is a collection of related data. By data, we mean know facts that can be recorded and that have implicit meaning. For example: telephone numbers, and addresses of the people you know. 
 
 A database has the following implicit properties: 
 
@@ -26,50 +26,6 @@ In large organizations, many people are involve in the design, use, and maintena
 	- Database Designers. Database Designers are responsible for identifying the data to be stored in the database and for choosing appropriate structures to represent and store this data. Database designers typically interact with each potential group of users and develop views of the database that meet the data and processing requirements of these groups.
 
 	-End users. End users are the people whose jobs require access to the database for querying, updating, and generating reports; the database primarily exists for their use. There are several categories of end users:
-
-		- Casual end users: occasionally access the database, but they may need different information each time. 
-
-		- Naive or parametric end users: make up a sizable portion of database end users. 
-
-		- Sophisticated end users: include engineers, scientists, business analysts, and other who thoroughly familiarized themselves with the facilities of the DBMS in order to implement their own applications to meet their complex requirements.
-
-
-History of Database Managements System 
-
-	
-Los origenes de las bases de datos se remontan a la Antiguedad, donde ya existian bibliotecas y toda clase de registros. El uso de las bases de datos se desarroll� a partir de las necesidades de almacenar grandes cantidades de informacion o datos.
-
-En 1884 Herman Hollerith cre� la m�quina autom�tica de tarjetas perforadas, siendo nombrado as� el primer ingeniero estad�stico de la historia. En esta �poca, los censos se realizaban de forma manual. Ante esta situacion, Hollerith comenz� a trabajar en el dise�o de una maquina tabuladora o censadora, la cual estaba basada en tarjetas perforadas.
-
-Posteriormente, en la d�cada de los cincuenta se da origen a las cintas magn�ticas, para automatizar la informacion y hacer respaldos.
-
-En la decada de los sesenta, las computadoras bajaron los precios para que las compa�ias privadas las pudiesen adquirir; dando paso a que se popularizada el uso de los discos, cosa que fue un adelanto muy efectivo en la �poca, debido a que a partir de este soporte se podia consultar la informacion directamente, sin tener que saber la ubicacion exacta de los datos.
-
-En esta misma �poca se dio inicio a las primeras generaciones de bases de red y las bases de datos jer�rquicas, ya que era posible guardar estructuras de datos en listas y arboles.
-	
-Se cree que el origen de los sistemas de bases de datos vinieron cuando inicio el proyecto Apolo, y dado que no habia un sistema de bases de datos para manejar o gestionar tanta informacion como la que requeria dicho proyecto. La primera empresa encargada del proyecto, NAA (North American Aviation), desarroll� una aplicacion, la cual llamaron GUAM, que estaba basada en el concepto que varias piezas peque�as juntas, forman una mas grande. Este tipo de estructura es lo que se denomina como una estructura jer�rquica.
-Luego, IBM se une a NAA para desarrollar GUAM, la cual luego ser�a IMS (Information Management System).Y posteriormente, se llevo a cabo el desarrollo del IDS (Integreated Data Store) desarrollado por Charles Bachman, IDS era un nuevo tipo de sistema de bases de datos, conocido como el sistema de red. El sistema de red se desarroll�, en parte, para satisfacer la necesidad de representar relaciones entre datos m�s complejos que las que se pod�an modelar con los sistemas jer�rquicos, y, en parte para imponer un est�ndar de bases de datos. Para ayudar a establecer dicho est�ndar, el grupo CODASYL (Conference on Data Systems Languages), formado por los representantes del gobieron de EEUU y representates del mundo empresarial, formaron un grupo denomiado DBTG (Data Base Task Group), cuyo objetivo era definir especificaciones est�ndar que permitieran la creacion de bases de datos y el manejo de datos. Los sistemas jer�rquico y de red constituyen la primera generaci�n de los SGBD. Estos sistemas presentan algunos inconvenientes:
-
-	- Es necesario escribir complejos programas de aplicaci�n para responder a cualquier tipo de consulta de datos, por simple que esta sea.
-
-	- La independencia de datos es m�nima.
-
-	- No tienen un fundamento te�rico. 
-	
-Por lo que respecta a la d�cada de los setenta, Edgar Frank Codd, cient�fico inform�tico ingles de los laboratorios de investigaciones de IBM, escribi� un art�culo presentado el modelo relacional. En este articulo presentaba tambi�n los inconvenientes de los sistemas previos. A la par public� una seria de reglas para los sistemas de datos relaciones a trav�s de su art�culo "Un modelo relacional de datos para grandes bancos de datos compartidos". Los primeros sistemas relaciones fueron System R, de IBM, que se desarroll� para probar la funcionalidad del modelo relacional. Estos acontecimientos trajeron dos grandes desarollos:
-
-	- En 1980 se desarrolla SQL (Structured Query Language) o lo que es lo mismo un lenguaje de consultas o lenguaje declarativo de acceso a bases de datos relaciones.
-
-	- La produccion de varios SGBD relacionales, como DB2, SLQ/DS Y Oracle.
-
-Hoy en d�a, existen cientos de SGBD relacionales, tanto para microordenadores como para sistemas multiusuario, aunque muchos no son completamente fieles al modelo relacional.  Los SGBD relacionales constituyen la segunda generaci�n de los SGBD. Sin embargo, el modelo relacional tambi�n tiene sus debilidades, siendo una de ellas su limitada capacidad al modelar los
-datos. Se ha hecho mucha investigaci�n desde entonces tratando de resolver este problema. En 1976, Peter Chen present� el modelo entidad-relaci�n, que es la t�cnica m�s utilizada en el dise�o de bases de datos. En 1979, Codd intent� subsanar algunas de las deficiencias de su modelo relacional con una versi�n extendida denominada RM/T (1979) y m�s recientemente RM/V2 (1990). Los intentos de proporcionar un modelo de datos que represente al mundo real de un modo m�s fiel han dado lugar a los modelos de datos sem�nticos.
-
-La evoluci�n reciente de la tecnolog�a de bases de datos viene marcada por el afianzamiento de las bases de datos orientadas a objetos, la extensi�n de las bases de datos relacionales y el procesamiento distribuido. Esta evoluci�n representa la tercera generaci�n de los SGBD. 
-
-Por su parte, los sistemas de gesti�n de bases de datos relacionales han ido evolucionando estos �ltimos a�os para soportar objetos y reglas, y para ampliar el lenguaje SQL y hacerlo m�s extensible y computacionalmente completo, dando lugar a lo que se conocen como sistemas objeto-relacionales.
-
-En la d�cada de 1990 la investigaci�n en bases de datos gir� en torno a las bases de datos orientadas a objetos. Las cuales han tenido bastante �xito a la hora de gestionar datos complejos en los campos donde las bases de datos relacionales no han podido desarrollarse de forma eficiente. As� se desarrollaron herramientas como Excel y Access del paquete de Microsoft Office que marcan el inicio de las bases de datos orientadas a objetos.
 
 
 Advantages of using the DBMS approach
