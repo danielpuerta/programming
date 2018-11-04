@@ -504,4 +504,4 @@ The UPDATE command is used to modify attribute values of one or more selected tu
 
 			UPDATE PROJECT SET Plocation='TX', Dnum=5 WHERE Pnumber=10;
 
-It is also possible to specify NULL or DEFAULT as the new attribute values.
+It is also possible to specify NULL or DEFAULT as the new attribute values
