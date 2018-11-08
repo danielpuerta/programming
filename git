@@ -427,3 +427,21 @@ This command looks up which server "origin" is, fetches any data from it that yo
 
  
 Pushing. When you want to share a branch with the world, you need to push it up to a remote that you have write access to. Your local branches aren't automatically synchronized to the remotes you write to, you have to explicitly push the branches you want to share. That way, you can use private branch for work you don't want to share and push up only the topic branches you want to collaborate on.
+
+Pulling. While the git fetch command will hetch down all the changes on the server that you don't get yet, it will not modify your working directory at all. It will simply get the data for you and let you merge it yourself. However, there is a command called git pull which is essentially a git fetch immediately followed by a git merge in most cases.
+
+Generally it's better to simply use the fetch and merge command explicitly as the magic of git pull can often be confusing.
+
+Delete branches. If you run 
+
+		$ git branch --delete <branch>
+		$ git branch -d <branch>
+
+Rebasing. In Git, there are two main ways to integrate changes from one branch into another: the merge and the rebase.
+
+With the rebase command, you can take all the changes that were committed on one brand and replay them on another one.
+
+		$ git checkout test_branch
+		$ git rebase master
+
+The end product is the same like could return the merge command. There is no differences in the end product of the integration, but rebasing makes for a cleaner history. If you examin the log a rebased branch, it looks like a linear history: if appears that all the work happened in series, even when it originally happened in parallel.
